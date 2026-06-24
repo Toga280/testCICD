@@ -24,6 +24,8 @@ jobs:
         run: chmod +x gradlew
 
       - name: Run tests
+        env:
+          WEATHER_API_KEY: ${{ secrets.WEATHER_API_KEY }}
         run: ./gradlew :composeApp:test
 
       - name: Upload test reports
